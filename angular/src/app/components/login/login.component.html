@@ -1,0 +1,71 @@
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="box">
+    <h1 class="text-center pb-3 border-bottom">LOGIN</h1>
+    <form
+      [formGroup]="loginForm"
+      [ngClass]="validated ? 'was-validated' : 'need-validation'"
+      class="pt-3"
+      (submit)="login()"
+      novalidate
+    >
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <div class="input-group has-validation">
+          <input
+            type="text"
+            [ngClass]="{
+              '': usernameValidation === 1,
+              'is-invalid': usernameValidation === 2,
+              'is-valid': usernameValidation === 3
+            }"
+            class="form-control"
+            formControlName="username"
+            placeholder="Username"
+            id="username"
+          />
+          <div
+            *ngIf="username?.errors !== null && (username?.errors)!['required']"
+            class="invalid-feedback"
+          >
+            Please enter a username.
+          </div>
+        </div>
+
+        <!-- <div class="invalid-feedback">Example help text goes outside the input group.</div> -->
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <div class="input-group has-validation">
+          <input
+            type="password"
+            [ngClass]="{
+              '': passwordValidation === 1,
+              'is-invalid': passwordValidation === 2,
+              'is-valid': passwordValidation === 3
+            }"
+            placeholder="Password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+          />
+
+          <div
+            *ngIf="password?.errors !== null && (password?.errors)!['required']"
+            class="invalid-feedback"
+          >
+            Please enter a password.
+          </div>
+        </div>
+        <div>
+          <p *ngIf="loginError" class="text-danger"><small> Incorrect username or password. </small></p>
+        </div>
+      </div>
+
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">Login</button>
+        <div class="dropdown-divider pt-1"></div>
+        <a class="link-primary border-top pt-3 text-center">Register</a>
+      </div>
+    </form>
+  </div>
+</div>

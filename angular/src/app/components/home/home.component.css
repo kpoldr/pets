@@ -1,0 +1,17 @@
+.container {
+    height: 700px;
+}
+
+.table-responsive {
+    height: 90%;
+
+}
+
+thead {
+    position: sticky;
+    top: 0;
+  }
+
+
+th, td { padding: 8px 16px; }
+thead th, thead td     { background:rgb(194, 218, 255); }

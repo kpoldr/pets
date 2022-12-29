@@ -1,0 +1,58 @@
+<div class="w-100 p-3" style="background-color: #eee">
+  <div class="container mt-3">
+    <div
+      *ngIf="loading; else petContent"
+      class="d-flex justify-content-center align-items-center h-100"
+    >
+      <div class="spinner-border text-primary" role="status"></div>
+    </div>
+
+    <ng-template #petContent>
+      <div class="row pb-4 px-3">
+        <div class="col-md-6">
+          <h2>My Pets</h2>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end">
+          <a routerLink="add" class="btn  btn-lg btn-success d-flex align-items-center">
+            Add Pet
+          </a>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped tableFixHead">
+          <thead>
+            <tr>
+              <td>#</td>
+              <th>Name</th>
+              <th>Identification Code</th>
+              <th>Type</th>
+              <th>Fur Color</th>
+              <th>Country</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pet of pets; let i = index" class="align-middle">
+              <th>{{ i + 1 }}</th>
+              <td>{{ pet.name }}</td>
+              <td>{{ pet.idCode }}</td>
+              <td>{{ pet.type }}</td>
+              <td>{{ pet.color }}</td>
+              <td>{{ pet.country }}</td>
+              <td style="width: 10%" class="text-end">
+                
+                  <button type="button" [routerLink]="['edit', pet.id]" class="btn btn-outline-primary">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button type="button" (click)="deletePet(pet.id!, i)"  class="btn btn-outline-danger">
+                    <i class="bi bi-trash-fill"></i>
+                  </button>
+                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-template>
+  </div>
+</div>

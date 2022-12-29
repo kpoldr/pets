@@ -1,0 +1,13 @@
+.box {
+    width: 400px;
+    
+}
+
+.container {
+    height: 650px;
+}
+
+.toast {
+    z-index: -1;
+background-color: rgba(255, 38, 0, 0.438);
+}

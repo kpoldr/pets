@@ -1,0 +1,27 @@
+<div class="container">
+  <header 
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+  >
+    <a
+      href="/" 
+      class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
+    >
+      <h4>PET APP</h4>
+    </a>
+
+    <div *ngIf="loggedIn" class="col-md-3 d-flex align-items-center">
+      <div class="row">
+        <div class="col-md-8 pt-1 ">
+            <h5 class="text-center">
+              Welcome <span class="text-primary">{{ username }}</span>
+            </h5>
+        </div>
+        <div class="col-md-4  d-flex  align-items-center">
+          <button  (click)="logout()" type="button" class="btn btn-outline-primary me-2">
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>

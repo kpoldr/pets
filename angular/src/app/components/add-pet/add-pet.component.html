@@ -1,0 +1,164 @@
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="box">
+    <h3 class="text-center pb-3 border-bottom">Add a new pet</h3>
+    <form
+      [formGroup]="petForm"
+      [ngClass]="validated ? 'was-validated' : 'need-validation'"
+      class="pt-3"
+      (submit)="tryAdd()"
+    >
+      <div class="mb-3">
+        <label for="petName" class="form-label">Name</label>
+        <div class="input-group has-validation">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            placeholder="Pet's name"
+            [ngClass]="{
+              '': nameValidation === 1,
+              'is-invalid': nameValidation === 2,
+              'is-valid': nameValidation === 3
+            }"
+            id="petName"
+          />
+
+          <div
+            *ngIf="name?.errors !== null && (name?.errors)!['required']"
+            class="invalid-feedback"
+          >
+            Please enter a name.
+          </div>
+          <div
+            *ngIf="name?.errors !== null && (name?.errors)!['maxlength']"
+            class="invalid-feedback"
+          >
+            Max length is 32.
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="idCode" class="form-label">Identification Code</label>
+        <div class="input-group has-validation">
+          <input
+            type="text"
+            placeholder="Pet's id code"
+            class="form-control"
+            id="idCode"
+            formControlName="idCode"
+            [ngClass]="{
+              '': idCodeValidation === 1,
+              'is-invalid': idCodeValidation === 2,
+              'is-valid': idCodeValidation === 3
+            }"
+          />
+          <div
+            *ngIf="idCode?.errors !== null && (idCode?.errors)!['required']"
+            class="invalid-feedback"
+          >
+            Please enter an identification code.
+          </div>
+          <div
+            *ngIf="name?.errors !== null && (name?.errors)!['maxlength']"
+            class="invalid-feedback"
+          >
+            Max length is 16.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="type" class="form-label">Pet type</label>
+        <div class="input-group has-validation">
+          <select
+            id="type"
+            class="form-select"
+            title="Empty"
+            aria-label="Type select"
+            formControlName="type"
+            [ngClass]="{
+              '': typeValidation === 1,
+              'is-invalid': typeValidation === 2,
+              'is-valid': typeValidation === 3
+            }"
+          >
+            <option value="" hidden>Select type</option>
+            <option
+              *ngFor="let type of types; let i = index"
+              value="{{ type.name }}"
+            >
+              {{ type.name }}
+            </option>
+          </select>
+          <div
+            *ngIf="type?.errors !== null && (type?.errors)!['required']"
+            class="invalid-feedback"
+          >
+            Please select a type.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="color" class="form-label">Pet color</label>
+        <div class="input-group has-validation">
+          <select
+            id="color"
+            class="form-select"
+            aria-label="Color select"
+            formControlName="color"
+            [ngClass]="{
+              '': colorValidation === 1,
+              'is-invalid': colorValidation === 2,
+              'is-valid': colorValidation === 3
+            }"
+          >
+            <option value="" hidden>Select color</option>
+            <option *ngFor="let color of colors" value="{{ color.name }}">
+              {{ color.name }}
+            </option>
+          </select>
+          <div
+            *ngIf="color?.errors !== null && (color?.errors)!['required']"
+            class="invalid-feedback"
+          >
+            Please select a color.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-label">Pet country</label>
+        <div class="input-group has-validation">
+          <select
+            id="country"
+            class="form-select"
+            aria-label="Default select example"
+            formControlName="country"
+            [ngClass]="{
+              '': countryValidation === 1,
+              'is-invalid': countryValidation === 2,
+              'is-valid': countryValidation === 3
+            }"
+          >
+            <option value="" hidden>Select country</option>
+            <option
+              *ngFor="let country of countries"
+              value="{{ country.name }}"
+            >
+              {{ country.name }}
+            </option>
+          </select>
+          <div
+            *ngIf="country?.errors !== null && (country?.errors)!['required']"
+            class="invalid-feedback"
+          >
+            Please select a country.
+          </div>
+        </div>
+      </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-success">Add</button>
+        <button routerLink="" class="btn btn-primary">Back</button>
+      </div>
+    </form>
+  </div>
+</div>
