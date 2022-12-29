@@ -1,4 +1,10 @@
-# MyApp
+# Pet App
+
+Angular + Spring Boot app
+
+## Projekti käivitamine
+
+### Käsurealt
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
