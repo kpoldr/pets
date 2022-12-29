@@ -41,6 +41,8 @@ JWT ei refreshi korrektselt tokenit (frontendis) - JWT refresh tehniliselt töö
 
 Tabeleid ei saa sorteerida - Ma proovisin lahendada, kuid ei jõudnud ajaliselt selleni.
 
+Swagger - Oleks parem ülevaade controlleritest
+
 ## Muu
 
 ### Aeg
