@@ -44,7 +44,7 @@ testuser password
 
 ### Projekti ERD
 
-![ERD](/pics/petERD.png)
+![ERD](/pics/PetERD.png)
 
 Dokumentasioon
 
