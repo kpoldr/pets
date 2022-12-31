@@ -13,6 +13,12 @@ Kaustas "javaSpring":
 ```
 gradle bootRun
 ````
+### IntelliJ IDEA
+
+Kasutades gradle akent ja valides sealt application/bootRun
+
+![application/bootRun](/pics/gradle.png)
+
 
 ### Frontend
 
@@ -21,14 +27,7 @@ Kaustas "angular":
 ```
 npm install
 npm run start 
-````
-
-### IntelliJ IDEA
-
-Kasutades gradle akent ja valides sealt application/bootRun
-
-![application/bootRun](/pics/gradle.png)
-
+```
 
 Projekti aadress http://localhost:4200/
 
