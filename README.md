@@ -1,6 +1,6 @@
-# Ürituse App
+# Pet App
 
-Ürituse app, mis on ehitatud ülesse React + MUI frontendiga ja Gradle + Spring backendiga
+Pet app, mis on ehitatud ülesse Angular frontendiga ja Gradle + Spring backendiga
 
 ## Projekti käivitamine
 
